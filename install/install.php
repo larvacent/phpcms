@@ -46,7 +46,7 @@ switch($step)
 		if(function_exists('fsockopen')) {
 			$PHP_FSOCKOPEN = '1';
 		}
-        $PHP_DNS = preg_match("/^[0-9.]{7,15}$/", @gethostbyname('www.phpcms.cn')) ? 1 : 0;
+        $PHP_DNS = preg_match("/^[0-9.]{7,15}$/", @gethostbyname('www.php.net')) ? 1 : 0;
 		//是否满足phpcms安装需求
 		$is_right = (phpversion() >= '5.2.0' && extension_loaded('mysqli') && $PHP_JSON && $PHP_GD && $PHP_FSOCKOPEN) ? 1 : 0;		
 		include PHPCMS_PATH."install/step/step".$step.".tpl.php";
@@ -551,4 +551,3 @@ function delete_install($dir) {
 	}
     return @rmdir($dir);
 }
-?>
